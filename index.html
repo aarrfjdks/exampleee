@@ -1,144 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Portal</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #eef2f7;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 1.5rem;
-    }
-    nav {
-      background-color: #34495e;
-      display: flex;
-      justify-content: center;
-    }
-    nav a {
-      padding: 1rem;
-      color: white;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    nav a:hover {
-      background-color: #2c3e50;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    .tab-content {
-      display: none;
-    }
-    .tab-content.active {
-      display: block;
-    }
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-    .profile img {
-      border-radius: 50%;
-      width: 130px;
-      height: 130px;
-      object-fit: cover;
-    }
-    .profile-info h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    .profile-info p {
-      margin: 0.5rem 0;
-      color: #555;
-    }
-    .section {
-      margin-top: 2rem;
-    }
-    .footer {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      color: #888;
-      background-color: #f0f0f0;
-      margin-top: 2rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    Welcome to the Profile Portal
-  </header>
-  <nav>
-    <a href="#" onclick="switchTab('profile')">Profile</a>
-    <a href="#" onclick="switchTab('organization')">Organization</a>
-    <a href="#" onclick="switchTab('projects')">Projects</a>
-    <a href="#" onclick="switchTab('settings')">Settings</a>
-  </nav>
-  <div class="container">
-    <div id="profile" class="tab-content active">
-      <div class="profile">
-        <img src="https://via.placeholder.com/130" alt="Profile Picture">
-        <div class="profile-info">
-          <h1>John Doe</h1>
-          <p>Email: <a href="mailto:john@example.com">john@example.com</a></p>
-          <p>Skills: HTML, CSS, JavaScript, Troubleshooting</p>
-          <p>Bio: Enthusiastic developer who enjoys clean design and intuitive user experiences.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELWP Volunteer Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-['Public_Sans'] min-h-screen flex flex-col">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <img src="logoelwp.jpeg" alt="ELWP Logo" class="w-12 h-12" />
+          <h1 class="text-2xl font-bold">
+            <a href="index.html">ELWP Volunteer</a>
+          </h1>
         </div>
+        <nav class="flex gap-6 text-sm" aria-label="Main Navigation">
+          <a href="#" class="hover:underline">Explore</a>
+          <a href="#" class="hover:underline">Events</a>
+          <a href="teams.html" class="hover:underline">Chats</a>
+          <a href="#" class="hover:underline">Projects</a>
+        </nav>
       </div>
-    </div>
+    </header>
 
-    <div id="organization" class="tab-content">
-      <div class="section">
-        <h2>Organization Info</h2>
-        <p>Department: Engineering</p>
-        <p>Role: Front-End Developer</p>
-        <p>Manager: Jane Smith</p>
-      </div>
-    </div>
+    <main class="flex-1 px-4 py-8 max-w-6xl mx-auto">
+      <section class="flex flex-col sm:flex-row gap-6 mb-8">
+        <img src="https://via.placeholder.com/150" class="rounded-full w-32 h-32" alt="Profile of Jenice W." />
+        <div>
+          <h2 class="text-2xl font-bold">Jenice W.</h2>
+          <p class="text-gray-600">Product Designer at Luminous</p>
+          <p class="text-gray-600">San Francisco, CA</p>
+        </div>
+      </section>
 
-    <div id="projects" class="tab-content">
-      <div class="section">
-        <h2>Projects</h2>
-        <ul>
-          <li>Website Redesign</li>
-          <li>Internal Dashboard</li>
-          <li>Mobile App UI</li>
+      <section aria-labelledby="circles-heading" class="mb-10">
+        <h3 id="circles-heading" class="text-xl font-semibold mb-4">Your Circles</h3>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <li class="flex flex-col items-center">
+            <img src="https://via.placeholder.com/100" class="rounded-full" alt="Luminous Circle" />
+            <p class="mt-2 text-sm">Luminous</p>
+          </li>
+          <li class="flex flex-col items-center">
+            <img src="https://via.placeholder.com/100" class="rounded-full" alt="Women in Tech Circle" />
+            <p class="mt-2 text-sm">Women in Tech</p>
+          </li>
+          <li class="flex flex-col items-center">
+            <img src="https://via.placeholder.com/100" class="rounded-full" alt="Designers Circle" />
+            <p class="mt-2 text-sm">Designers</p>
+          </li>
         </ul>
-      </div>
-    </div>
+      </section>
 
-    <div id="settings" class="tab-content">
-      <div class="section">
-        <h2>Account Settings</h2>
-        <p>Change email, update password, and manage preferences.</p>
-      </div>
-    </div>
-  </div>
+      <section aria-labelledby="projects-heading">
+        <h3 id="projects-heading" class="text-xl font-semibold mb-4">Your Projects</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <li class="bg-white rounded-lg shadow p-4">
+            <img src="https://via.placeholder.com/300" class="w-full h-32 object-cover rounded" alt="Luminous Project" />
+            <h4 class="text-lg font-medium mt-2">Luminous</h4>
+            <p class="text-sm text-gray-600">Tech company</p>
+          </li>
+          <li class="bg-white rounded-lg shadow p-4">
+            <img src="https://via.placeholder.com/300" class="w-full h-32 object-cover rounded" alt="UX Research Project" />
+            <h4 class="text-lg font-medium mt-2">UX Research Project</h4>
+            <p class="text-sm text-gray-600">User experience study</p>
+          </li>
+        </ul>
+      </section>
+    </main>
 
-  <div class="footer">
-    &copy; 2025 John Doe. All rights reserved.
-  </div>
-
-  <script>
-    function switchTab(tabId) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-    }
-  </script>
-</body>
+    <footer class="text-center text-sm text-gray-500 py-4">
+      &copy; 2025 ELWP Volunteer. All rights reserved.
+    </footer>
+  </body>
 </html>
