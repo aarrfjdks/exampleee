@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Portal</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eef2f7;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    nav {
+      background-color: #34495e;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background-color: #2c3e50;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .profile img {
+      border-radius: 50%;
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+    }
+    .profile-info h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .profile-info p {
+      margin: 0.5rem 0;
+      color: #555;
+    }
+    .section {
+      margin-top: 2rem;
+    }
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #888;
+      background-color: #f0f0f0;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Welcome to the Profile Portal
+  </header>
+  <nav>
+    <a href="#" onclick="switchTab('profile')">Profile</a>
+    <a href="#" onclick="switchTab('organization')">Organization</a>
+    <a href="#" onclick="switchTab('projects')">Projects</a>
+    <a href="#" onclick="switchTab('settings')">Settings</a>
+  </nav>
+  <div class="container">
+    <div id="profile" class="tab-content active">
+      <div class="profile">
+        <img src="https://via.placeholder.com/130" alt="Profile Picture">
+        <div class="profile-info">
+          <h1>John Doe</h1>
+          <p>Email: <a href="mailto:john@example.com">john@example.com</a></p>
+          <p>Skills: HTML, CSS, JavaScript, Troubleshooting</p>
+          <p>Bio: Enthusiastic developer who enjoys clean design and intuitive user experiences.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="organization" class="tab-content">
+      <div class="section">
+        <h2>Organization Info</h2>
+        <p>Department: Engineering</p>
+        <p>Role: Front-End Developer</p>
+        <p>Manager: Jane Smith</p>
+      </div>
+    </div>
+
+    <div id="projects" class="tab-content">
+      <div class="section">
+        <h2>Projects</h2>
+        <ul>
+          <li>Website Redesign</li>
+          <li>Internal Dashboard</li>
+          <li>Mobile App UI</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="settings" class="tab-content">
+      <div class="section">
+        <h2>Account Settings</h2>
+        <p>Change email, update password, and manage preferences.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 John Doe. All rights reserved.
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
